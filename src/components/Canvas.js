@@ -62,25 +62,35 @@ export default function Canvas() {
             setPage(page + 1)
         }
 
-        if (search) getImages()
+        if (search) getImages(search)
     }
 
     // Get images from Unsplash API
-    const getImages = async () => {
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${search}&per_page=${perPage}&page=${page}&client_id=${process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY}`).then((res) => res.json())
-        const images = response?.results && response.results.map((image) => image.urls.small) //.urls.regular also work but it's too big for now
+    const getImages = async (searchQuery) => {
+        try {
+            const response = await fetch(`https://api.unsplash.com/search/photos?query=${searchQuery}&per_page=${perPage}&page=${page}&client_id=${process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY}`)
+            if (!response.ok) throw new Error('Network response was not ok')
 
-        if (images) setImages(images)
+            const responseData = await response.json()
+            const responseImages = responseData?.results?.map((image) => image.urls.small) || []
+
+            setImages(responseImages)
+        } catch (error) {
+            console.error('Error fetching data:', error)
+            return []
+        }
     }
 
     // Handle search form
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const data = e.target[0].form
+        const searchQuery = data.search.value
 
-        setSearch(data.search.value)
+        setSearch(searchQuery)
 
-        if (search) getImages()
+        // Wait for response
+        await getImages(searchQuery)
     }
 
     // Handle uploaded images

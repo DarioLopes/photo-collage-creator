@@ -1,6 +1,6 @@
 ## BUGS ##
 
-- [ ] 2 click to search images through API (first click always return no results, can't quite put my finger on it)
+- [x] 2 click to search images through API (first click always return no results, can't quite put my finger on it)
 - [ ] On export hide photo selector
 - [ ] Drag and drop upload visual feedback not showing properly on drag
 - [ ] ... The list, like the show, must go on
