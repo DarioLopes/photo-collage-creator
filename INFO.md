@@ -25,7 +25,7 @@ For the speed and easy process I didn't split the files as much as I'd like othe
 
 I've used lib Konva for the canvas interactions as it checked all the boxes for the exercise and it still maintained (last PR was 2 weeks ago) and it has almost 10k stars on Github.
 
-Took me about 4-5 hours to do that (I know, I just shot myself in the foot admitting that, but hey at least I'm honest lol). On the 2 hours mark I had everything done from the panel but the canvas was only ready to recieve datas, no interaction was present between them, so the canvas lacked any kind of interactivity. It's my first time playing with <canvas>, never used them before, it's pretty fun and I might continue this project just for the sake of learning.
+Took me about 4-5 hours to do that (I know, I just shot myself in the foot admitting that, but hey at least I'm honest lol). On the 2 hours mark I had everything done from the panel but the canvas was only ready to recieve datas, no interaction was present between them, so the canvas lacked any kind of interactivity. It's my first time playing with canvas, never used them before, it's pretty fun and I might continue this project just for the sake of learning.
 
 Hope it turns out OK, in any case, thank you!
 
