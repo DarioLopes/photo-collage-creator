@@ -5,7 +5,7 @@ import { Layer, Stage } from 'react-konva'
 import CustomImage from './CustomImage'
 
 function downloadURI(uri, name) {
-    var link = document.createElement('a')
+    let link = document.createElement('a')
     link.download = name
     link.href = uri
     document.body.appendChild(link)
